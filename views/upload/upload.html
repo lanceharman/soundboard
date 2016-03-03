@@ -1,0 +1,68 @@
+<div class="row">
+
+	<section>
+		<!-- ng-change binding is not supported for input type="file" -->
+		<!-- https://github.com/angular/angular.js/issues/1375 -->
+		<input type="file" id="upload" accept="audio/*" onchange="angular.element(this).scope().ReadFile(this)" hidden="hidden" />
+		<button ng-click="SelectFile()">Select File</button>
+		<div class="clear"></div>
+
+		<section class="row" ng-show="submission.filename">
+
+			<h2>Let's add {{submission.filename}}</h2>
+
+			<div class="columns small-12 medium-8 medium-centered large-4">
+
+				<input type="text" name="title" id="title" placeholder="Title" />
+
+				<input type="text" name="description" id="description" placeholder="Description" />
+
+				<input type="text" name="tags" id="tags" placeholder="Tags" />
+
+				<button ng-click="SubmitSound()">Send it off!</button>
+
+			</div>
+
+		</section>
+
+		<!-- End of functionality, below is purely information -->
+
+		<section>
+			<h3>Tips &amp; Tricks</h3>
+
+			<p>
+				Try finding your clip on <a href="http://www.youtube.com" target="_blank">YouTube</a> and post the link in to <a href="http://www.videograbby.com/" target="_blank">VideoGrabby</a> to download it as an .mp3. Once that's done you can trim the file down to only the soundbyte you want easily by using <a href="http://web.audacityteam.org/download/" target="_blank">Audacity</a>, which is free and open source.
+			</p>
+
+			<p>
+				Simply drag and drop your sound file in to Audacity, highlight the bit you want, trim (Ctrl+T) and export (Ctrl + Shift + E) the file to the desired location. It is recommended that you export your files as .ogg considering that .mp3 is technically proprietary.
+			</p>
+
+			<h4>Other Guidelines</h4>
+			<div class="text-left">
+				<ul>
+
+					<li>
+						"Brevity is the soul of wit" - Shakespeare
+						<ul>
+							<li>
+								Try to keep clips short; you may think your clip is funny, but anything over 5 seconds drags on and is no longer a "soundbyte"
+							</li>
+						</ul>
+					</li>
+
+					<li>
+						Stay safe for work! We keep track of who uploaded what.
+					</li>
+
+					<li>
+						If you want your user account to be upgraded for upload access, contact Lance.
+					</li>
+				</ul>
+			</div>
+
+		</section>
+
+	</section>
+
+</div>

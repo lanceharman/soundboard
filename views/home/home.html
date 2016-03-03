@@ -1,0 +1,30 @@
+<section class="row">
+	<h1>COMPANY SOUNDBOARD <span>Alpha</span></h1>
+
+	<div class="search">
+		<input type="text" placeholder="SEARCH" ng-model="search"/>
+	</div>
+
+	<ul class="small-block-grid-1 medium-block-grid-3 large-block-grid-5 sound-grid">
+
+		<li ng-repeat="sound in sounds | orderBy: 'title' | filter:search">
+			<div ng-click="playSound(sound)" ng-class="{active:sound.active}" class="sound-btn btn">
+				{{ sound.title }}
+			</div>
+
+			<i class="fa fa-info-circle" ng-click="FireModal($index)"></i>
+
+			<div id="modal-{{$index}}" class="reveal-modal" data-reveal="">
+				<h3>{{sound.title}}</h3>
+				<p>Description: {{sound.description}}</p>
+				<p>Tags: {{sound.tags}}</p>
+				<p>Submitted by: {{sound.author}}</p>
+
+				<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+			</div>
+
+		</li>
+
+	</ul>
+
+</section>
